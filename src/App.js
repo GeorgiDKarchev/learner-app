@@ -6,27 +6,38 @@ import './App.css';
 
  function App() {
   // create a new state passing the learnerData
-  //  const [learner,setLearners] = useState(learnerData)
-  const [learners, setLearners] = useState(learnerData);
+const [learners, setLearners] = useState(learnerData);
 const handleShowLearner = () => {
-  
 };
  
-
 return (
   <main>
+      
       <>
+        <h1>Learners list</h1>
           {learners.map((learner, index) => (
-              <li>
-                  <span>name: {learner.name}</span>
-                  <span>bio: {learner.bio}</span>
-                  <span>scores: {learner.scores[1].score}</span>
-              </li>
+              <ul>
+                  <li>name: {learner.name}</li>
+                  <li>bio: {learner.bio}</li>
+                  <li>scores: 
+                    
+                    {learner.scores[1].date}
+                    
+                    {learner.scores[1].score}
+ 
+                  
+                  </li>
+              </ul>
+           
           ))}
+        
         <button onClick={handleShowLearner()}>Next</button>
-
       </>
   </main>
 );
 };
+
+
+
+
 export default App;
