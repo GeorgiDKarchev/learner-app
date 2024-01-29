@@ -1,6 +1,8 @@
+//import State Hook
 import {useState} from 'react';
+//import whole learner data  from  - src/data/learnerDte
 import {learnerData} from './data/learnerData';
-// import useState
+import Learner from "./components/Learner"
 
 import './App.css';
 
@@ -11,31 +13,18 @@ const handleShowLearner = () => {
 };
  
 return (
-  <main>
-      
-      <>
-        <h1>Learners list</h1>
-          {learners.map((learner, index) => (
-              <ul>
-                  <li>name: {learner.name}</li>
-                  <li>bio: {learner.bio}</li>
-                  <li>scores: 
-                    
-                    {learner.scores[1].date}
-                    
-                    {learner.scores[1].score}
- 
-                  
-                  </li>
-              </ul>
-           
-          ))}
-        
-        <button onClick={handleShowLearner()}>Next</button>
-      </>
-  </main>
-);
-};
+  <div>
+      <h1>Learners List</h1>
+{/* Map over learners to display them one by one */}
+      <ul>
+        {learners.map((learner,i) => (
+          <Learner learner={learner} key={learner.id} />
+        ))}
+      </ul>
+
+    </div>
+  );
+}
 
 
 
