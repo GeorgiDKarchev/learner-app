@@ -53,6 +53,14 @@ function CreateLearnerForm({ setLearners, learners }) {
           onChange={handleChange}
         ></textarea>
 
+        <label htmlFor="score" className="newScore">Score: </label>
+        <textarea
+          name="score"
+          id="score"
+          value={newLearner.score}
+          onChange={handleChange}
+        ></textarea>
+        
         <Button type="submit">Create new Learner</Button>
 
       </form>

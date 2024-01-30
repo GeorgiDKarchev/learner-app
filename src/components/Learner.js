@@ -1,12 +1,13 @@
 import Score from "./Score";
 import Button from "./Button"
+
 function Learner({learner, learners, setLearners}) {
     console.log(learner)
-const{name,bio,scores}=learner;
+    const{name,bio,scores}=learner;
 
     const handleDelete =(e) => {
         //TODO implement delete
-    const results= learners.filter(l => l.name !==name);
+    const results= learners.filter(l => l.name !==l.name);
     console.log(results);
     setLearners(results);
         
@@ -17,20 +18,20 @@ const{name,bio,scores}=learner;
         <main>
             <>
              <p>
-             <b>Name:</b>{learner.name}
+             <b>Name:</b>{name}
              <Button onClick ={handleDelete}>DELETE</Button>
              </p>
             </>
             
             <>
             <p>
-            <b>Bio:</b>{learner.bio}
+            <b>Bio:</b>{bio}
 
             </p>
             </>
             <>
             <p>
-            <b>Scores:</b> {learner.scores.map((score,i)=>(
+            <b>Scores:</b> {scores.map((score,i)=>(
                 <Score score ={score} key={score.id} />
             
 

@@ -6,16 +6,15 @@ import Learner from "./components/Learner"
 import CreateLearnerForm from "./components/CreateLearnerForm"
 import './App.css';
 
- function App() {
+function App() {
   // create a new state passing the learnerData
 const [learners, setLearners] = useState(learnerData);
-const handleShowLearner = () => {
-};
+
  
 return (
   <div>
       <h1>Learners List</h1>
-      <CreateLearnerForm setLearner={setLearners} learners={learners}/>
+      <CreateLearnerForm setLearners={setLearners} learners={learners}/>
 
 {/* Map over learners to display them one by one */}
       <ul>
